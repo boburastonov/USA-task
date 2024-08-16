@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TASK</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="sidebar" class="sidebar">
+      <div class="deal">
+        <button id="createJobBtn" class="button">NEW Create a job</button>
+      </div>
+      <div class="details-section">
+        <h2>Details</h2>
+        <div class="details-item">
+          <span>Address - &nbsp;</span>
+          <p id="address" style="color: #486186"></p>
+        </div>
+        <div class="details-item">
+          <span>Job type - &nbsp;</span>
+          <p id="jobType"></p>
+        </div>
+        <div class="details-item">
+          <span>Job source - &nbsp;</span>
+          <p id="jobSource">GL Pinellas</p>
+        </div>
+        <div class="details-item">
+          <span>Job date - &nbsp;</span>
+          <p id="jobDate"></p>
+        </div>
+        <div class="details-item">
+          <span>Job start time - &nbsp;</span>
+          <p id="jobStartTime"></p>
+        </div>
+        <div class="details-item">
+          <span>Job end time - &nbsp;</span>
+          <p id="jobEndTime"></p>
+        </div>
+        <div class="details-item">
+          <span>Tampa Technician - &nbsp;</span>
+          <p id="technicnan"></p>
+        </div>
+      </div>
+    </div>
+    <div id="modal1" class="modal modal1">
+      <div class="modal-content modal-content1">
+        <div class="modal-header">
+          <h2>NEW Create a job</h2>
+          <span class="close">&times;</span>
+        </div>
+        <span class="loader"></span>
+      </div>
+    </div>
+    <!-- Main Modal -->
+    <div id="createJobModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>NEW Create a job</h2>
+          <span class="close">&times;</span>
+        </div>
+        <form id="jobForm" class="form">
+          <div class="top">
+            <!-- Client details -->
+            <div class="form-group">
+              <label>Client details</label>
+              <div class="top-inputs">
+                <input
+                  class="input"
+                  type="text"
+                  id="firstName"
+                  placeholder="First name"
+                />
+                <input
+                  class="input"
+                  type="text"
+                  id="lastName"
+                  placeholder="Last name"
+                />
+              </div>
+              <input
+                class="input"
+                type="tel"
+                id="phone"
+                placeholder="(233) 333-4455"
+              />
+              <input
+                class="input"
+                type="email"
+                id="email"
+                placeholder="test@test.test"
+              />
+            </div>
+            <!-- Job details -->
+            <div class="form-group">
+              <label>Job type</label>
+              <select id="jobTypes">
+                <option value="Select job type">Select job type</option>
+                <option value="Recall job">Recall job</option>
+              </select>
+              <select id="jobSource">
+                <option value="GL Pinellas">GL Pinellas</option>
+              </select>
+              <textarea
+                id="jobDescription"
+                placeholder="Job description (optional)"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="middle">
+            <!-- Service location -->
+            <div class="form-group">
+              <label>Service location</label>
+              <input
+                class="input"
+                type="text"
+                id="addres"
+                placeholder="Address"
+                required
+              />
+              <p id="error" class="error-message">Please fill out this field</p>
+              <input class="input" type="text" id="city" placeholder="City" />
+              <input class="input" type="text" id="state" placeholder="State" />
+              <div class="tmp">
+                <input class="input" type="text" id="code" />
+                <select id="location">
+                  <option value="Tampa">Tampa</option>
+                  <!-- Add more locations here -->
+                </select>
+              </div>
+            </div>
+            <!-- Scheduled date and time -->
+            <div class="form-group">
+              <label>Scheduled</label>
+              <input class="input" type="date" id="scheduledDate" />
+              <div class="times">
+                <input
+                  class="input"
+                  type="time"
+                  id="scheduledStartTime"
+                  value="08:00"
+                />
+                <input
+                  class="input"
+                  type="time"
+                  id="scheduledEndTime"
+                  value="08:00"
+                />
+              </div>
+              <select id="technician">
+                <option value="Technician 1">Technician 1</option>
+                <option value="Timur Yusupov">Timur Yusupov</option>
+                <!-- Add more technicians here -->
+              </select>
+            </div>
+          </div>
+          <div class="form-btns">
+            <button type="button" id="createJobButton" class="btn btn-create">
+              Create job
+            </button>
+            <button type="button" id="saveInfoButton" class="btn btn-save">
+              Save info
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Third Modal -->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>NEW Create a job</h2>
+          <span class="close">&times;</span>
+        </div>
+        <h2 class="main-text">
+          Job is created!<a href="#" id="link" class="link">View Deal</a
+          ><span class="modal-text">View in Workiz</span>
+        </h2>
+      </div>
+    </div>
+    <!-- Fourth Modal -->
+    <div id="modal4" class="modal modal-frth"></div>
+    <!-- Fifth modal -->
+    <div id="modal5" class="modal modal-fifth">
+      <div class="modal-contentt"><span class="loader loader-f">P</span></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
